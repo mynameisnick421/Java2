@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f04dbb55-6567-4f77-a16b-3f82fc6f179d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Chapter3firstex/Chapter3firstex.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Chapter3firstex/src/KDRCalculotor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Chapter3firstex/src/KDRSplashDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DecimalFormatExamples2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DecimalFormatExamples2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DecimalFormatExamples2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DecimalFormatExamples2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DecimalFormatExamples2/DecimalFormatExamples2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DecimalFormatExamples2/src/FormatDecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUICalcExample/GUICalcExample.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUICalcExample/src/GUICalcsExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUI_Eggs/GUI_Eggs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUI_Eggs/src/GUI_Eggs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/PassAndReturn.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PassAndReturn/src/passandreturn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sammy/Sammy1/Sammy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sammy/SammysRentalPrice/SammysRentalPrice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SammysRentalPrice/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SammysRentalPrice/.idea/SammysRentalPrice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SammysRentalPrice/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SammysRentalPrice/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SammysRentalPrice/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TeamProject/TeamProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TeamProject/src/TeamProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch1-2Reference/ch1-2Reference.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch1-2Reference/src/reference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eggs/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnotherProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AnotherProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter2Variables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter2Variables/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/Sammy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/Sammy.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/out/production/Sammy/SammysMotto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/out/production/Sammy/SammysMotto2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/src/SammysMotto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sammy/src/SammysMotto2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eggs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eggs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eggs/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eggs/src/com/company/Main.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1UX6TWv5NMPCiYU7eiyeAJuBbcN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f04dbb55-6567-4f77-a16b-3f82fc6f179d" name="Default Changelist" comment="" />
+      <created>1575490600596</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575490600596</updated>
+      <workItem from="1575490602183" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
