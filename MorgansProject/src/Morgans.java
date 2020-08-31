@@ -15,7 +15,7 @@ public class Morgans {
     static String[][] employeeArr= new String[10][3];//array to store employee info
     static double[] payCheckArr = new double[10];//array to store pay check values
     static double[][] bonusPercentArr = new double[4][3];
-    static int empIndex=0;
+    static int empIndex=0;//stores number of employees
 
     public static void main(String[] args) {
         init();
@@ -79,8 +79,9 @@ public class Morgans {
             System.out.println("Option 2: Display all employee data.");
             System.out.println("Option 3: Select data of single employee.");
             System.out.println("Option 4: Exit.");
-            System.out.println("Enter option to continue: ");
+            System.out.print("Enter option to continue: ");
             input = scan.nextLine();
+            System.out.println();
         }
         while(!validInput(input));
         return input;
@@ -93,10 +94,10 @@ public class Morgans {
      */
     public static boolean validInput(String input) {
         boolean valid = true;
-
         if (!input.matches("[1234]")) {//checks against valid input
-            System.out.println("Invalid Input. Press enter to try again.");
+            System.out.print("Invalid Input. Press enter to try again.");
             scan.nextLine();
+            System.out.println();
             valid = false;
         }
         return valid;
@@ -124,13 +125,12 @@ public class Morgans {
         boolean addEmp = true;
         String prompt1= "Enter employee first name: ";
         String prompt2= "Enter employee last name: ";
-        String prompt3= "Enter paycheck amount: ";
-        String prompt4= "Enter employee status (FT/PT): ";
         while(empIndex<10 && addEmp){
-            employeeArr[empIndex][0] = inputPrompt(prompt1,1);
-            employeeArr[empIndex][1] = inputPrompt(prompt2,2);
-            payCheckArr[empIndex]= Double.parseDouble(inputPrompt(prompt3,3));
-            employeeArr[empIndex][2] = inputPrompt(prompt4,4);
+            //fill arrays with validated input from input method
+            employeeArr[empIndex][0] = nameInput(prompt1).trim();
+            employeeArr[empIndex][1] = nameInput(prompt2).trim();
+            payCheckArr[empIndex]= Double.parseDouble(checkInput());
+            employeeArr[empIndex][2] = statusInput();
             System.out.print("Enter another employee? (y/n): ");
             String input = scan.nextLine().toUpperCase();
             switch(input){
@@ -178,19 +178,19 @@ public class Morgans {
         for(int i=0;i<empIndex;i++){
             total += bonusArr[i];
         }
-        return String.format("%50s%11s","Total Bonus:",moneyFormat.format(total));
+        return String.format("%53s%11s","Total Bonus:",moneyFormat.format(total));
     }
 
     public static void optionThree() {
         String prompt1= "Enter employee first name: ";
         String prompt2= "Enter employee last name: ";
-        int x;
+        int x; //hold index of employee if found
         if(empIndex>0) {
-            String fName=inputPrompt(prompt1,1).toUpperCase();
-            String lName=inputPrompt(prompt2,2).toUpperCase();
+            String fName=nameInput(prompt1).toUpperCase();
+            String lName=nameInput(prompt2).toUpperCase();
             for (x = 0; x < empIndex; x++) {
-                if (fName.equals(employeeArr[x][0].toUpperCase()) && lName.equals(employeeArr[x][1].toUpperCase())) {
-                    System.out.println(printData(x, false));
+                if (fName.trim().equals(employeeArr[x][0].toUpperCase()) && lName.trim().equals(employeeArr[x][1].toUpperCase())) {
+                    System.out.println(printData(x, false));//passes employee index to printData method
                     break;
                 }
             }
@@ -204,92 +204,124 @@ public class Morgans {
         System.out.println("Press enter to return to menu");
         scan.nextLine();
     }
+
     /**
-     * Displays prompt returns validated input from user
-     * @param prompt String used as prompt for input
-     * @param num 3 validates check amount, 4 validates status, other validates not empty
-     * @return validated input per prompt
+     * validates name input
+     * @param prompt prompt for input from user
+     * @return validated input string
      */
-    public static String inputPrompt(String prompt, int num) {
-        boolean invalid;
-        double temp = 0;
-        String inputStr;
-        do{
+    public static String nameInput(String prompt){
+        String input;
+        boolean invalid= true;
+        do {
             System.out.print(prompt);
-            inputStr = scan.nextLine();
-            invalid = inputStr.isBlank();//if input is empty is is invalid
-            if (invalid) {
+            input = scan.nextLine();
+            if (input.isBlank()) {
                 System.out.print("Please enter data. Press enter to try again.");
                 scan.nextLine();
             }
             else{
-                if (num == 3){//validates check amount input
-                    try{
-                        temp= Double.parseDouble(inputStr);
-                    }catch (Exception e){
-                        System.out.print("Invalid number entered. Press enter to try again.");
-                        scan.nextLine();
-                        invalid=true;
-                    }
-                    if(!invalid){//check if amount is in range
-                        if(temp <.01 || temp > 9999.99){
-                            System.out.print("Check amount must be .01-9999.99. Press enter to try again.");
-                            scan.nextLine();
-                            invalid= true;
-                        }
-                    }
+                if (input.length() > 10) {//limits size of name for report formatting reasons
+                    System.out.print("Please limit name input to 10 characters or less. Press enter to try again.");
+                    scan.nextLine();
                 }
-                if(num == 4){//validates status input
-                    inputStr=inputStr.toUpperCase();
-                    if (!inputStr.matches("FT|PT")) {//checks against valid input
-                        System.out.print("Invalid Input. Enter (FT or PT). Press enter to try again.");
-                        scan.nextLine();
-                        invalid=true;
-                    }
+                else{
+                    invalid = false;
                 }
             }
         }
-        while (invalid);//loops prompt if no input received
-        return inputStr;
+        while(invalid);
+        return input;
     }
+
+    /**
+     * prompts for user input
+     * @return validated check amount input
+     */
+    public static String checkInput(){
+        String input;
+        boolean invalid = true;
+        do {
+            System.out.print("Enter paycheck amount: ");
+            input = scan.nextLine();
+            if (input.isBlank()) {
+                System.out.print("Please enter data. Press enter to try again.");
+                scan.nextLine();
+            } else {
+                try {
+                    if (Double.parseDouble(input) < .01 || (Double.parseDouble(input) > 9999.99)) {
+                        System.out.print("Check amount must be .01-9999.99. Press enter to try again.");
+                        scan.nextLine();
+                    }
+                    else{
+                        invalid = false;
+                    }
+                } catch (Exception e) {
+                    System.out.print("Invalid number entered. Press enter to try again.");
+                    scan.nextLine();
+                }
+            }
+        }
+        while (invalid);
+        return input;
+    }
+
+    public static String statusInput(){
+        String input;
+        boolean invalid = true;
+        do{
+            System.out.print("Enter employee status (FT/PT): ");
+            input = scan.nextLine();
+            input=input.toUpperCase();
+            if (!input.matches("FT|PT")) {//checks against valid input
+                System.out.print("Invalid Input. Enter (FT or PT). Press enter to try again.");
+                scan.nextLine();
+            }
+            else{
+                invalid = false;
+            }
+        }while(invalid);
+        return input;
+    }
+
     public static String printHeading(){
-        return String.format("%-20s%-9s%16s%16s", "Employee Name","Status","Paid Amount","Bonus Amount");
+        return String.format("%-23s%-9s%16s%16s", "Employee Name","Status","Paid Amount","Bonus Amount");
     }
 
     /**
      * uses employee index to access employee data in arrays
-     * @param i employee index in array
+     * @param employeeIndex employee index in array
      * @param column supply true for column display, false for vertical display
      * @return a string of formatted emoloyee data
      */
-    public static String printData(int i, boolean column){
+    public static String printData(int employeeIndex, boolean column){
         String status;
         String pattern = "$###,###.00";
         DecimalFormat moneyFormat = new DecimalFormat(pattern);
-        String name= employeeArr[i][1]+", "+employeeArr[i][0];
-        int s;
-        if(employeeArr[i][2].equals("FT")){
+        String name= employeeArr[employeeIndex][1]+", "+employeeArr[employeeIndex][0];
+        int statusIndex;
+        if(employeeArr[employeeIndex][2].equals("FT")){
             status = "Full Time";
-            s = 2;
+            statusIndex = 2;
         }
         else {
             status = "Part Time";
-            s = 1;
+            statusIndex = 1;
         }
         for(int x=0;x<bonusPercentArr.length;x++){
-            if(payCheckArr[i]<=bonusPercentArr[x][0]){
-                bonusArr[i] = payCheckArr[i] * bonusPercentArr[x][s];
+            if(payCheckArr[employeeIndex]<=bonusPercentArr[x][0]){
+                bonusArr[employeeIndex] = payCheckArr[employeeIndex] * bonusPercentArr[x][statusIndex];
                 break;
             }
         }
         if (column){
-            return String.format("%-20s%-9s%16s%16s", name,status,moneyFormat.format(payCheckArr[i]),moneyFormat.format(bonusArr[i]));
+            return String.format("%-23s%-9s%16s%16s", name,status,moneyFormat.format(payCheckArr[employeeIndex]),moneyFormat.format(bonusArr[employeeIndex]));
         }
         else {
             return "\nName:\t\t"+ name +
                     "\nStatus:\t\t"+ status +
-                    "\nPay Amount:\t"+ moneyFormat.format(payCheckArr[i]) +
-                    "\nBonus Pay:\t"+ moneyFormat.format(bonusArr[i]) ;
+                    "\nPay Amount:\t"+ moneyFormat.format(payCheckArr[employeeIndex]) +
+                    "\nBonus Pay:\t"+ moneyFormat.format(bonusArr[employeeIndex]) ;
         }
     }
 }
